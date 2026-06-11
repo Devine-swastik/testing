@@ -1,12 +1,11 @@
-document.getElementById('move-random').addEventListener('click', function(e) {
-  e.preventDefault();
+function moveRandomEl(elm) {
+    elm.style.position = "absolute";
+    elm.style.top = Math.floor(Math.random() * 90 + 5) + "%";
+    elm.style.left = Math.floor(Math.random() * 90 + 5) + "%";
+  }
   
-  // Get random position
-  const randomX = Math.random() * (window.innerWidth - 100);
-  const randomY = Math.random() * (window.innerHeight - 100);
+  const moveRandom = document.querySelector("#move-random");
   
-  // Set button position
-  this.style.position = 'fixed';
-  this.style.left = randomX + 'px';
-  this.style.top = randomY + 'px';
-});
+  moveRandom.addEventListener("mouseenter", function (e) {
+    moveRandomEl(e.target);
+  });
